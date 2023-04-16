@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "start": "node app.js"
+  },
+  "name": "loooovecalculator",
+  "version": "1.0.0",
+  "description": "Love Calculator is a new version of my old version of Love Calculator. Get Your Own Love Result Instantly Using Love Calculator. Don't forget to give a Star &amp; Follow me",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiamHngr/LooooveCalculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LiamHngr/LooooveCalculator/issues"
+  },
+  "homepage": "https://github.com/LiamHngr/LooooveCalculator#readme"
+}

@@ -1,10 +1,5 @@
-/*=============================
-    Made With ♥ By Al Nahian
-  ============================*/
-// Start Code
-// 05 Sep July 2020
-// hello this is liam asdasd
-// Al Nahian | https://alnahian2003.github.io
+
+
 
 // global variables
 var yourName = document.getElementById("yourname"),
@@ -13,8 +8,8 @@ var yourName = document.getElementById("yourname"),
   yourlovescoreis = document.getElementById("yourlovescoreis"),
   loveScore = Math.random() * 100,
   loveInfo = document.getElementById("loveinfo"),
-  reloadBtn = document.getElementById("reload");
-loveScore = Math.floor(loveScore) + 1;
+  reloadBtn = document.getElementById("reload"),
+  loveScore = Math.floor(loveScore) + 1;
 
 //capitalize input values
 function capitalize_Words(str) {
@@ -52,12 +47,18 @@ function love() {
 // Add eventlistener to button
 calcBtn.addEventListener("click", function (e) {
   //loveScore = Math.random() * 100; //delete this line if you want to keep the same value in the same session.
-  loveSeed = ASCIISuma(yourName) + ASCIISuma(theirName)
-  loveScore = loveSeed/(Math.pow*(10,loveSeed.ToString().Length))*100
-  if ((yourName.toLowerCase().includes("echo") & theirName.toLowerCase().includes("liam") ) || (yourName.toLowerCase().includes("liam") & theirName.toLowerCase().includes("echo") )  ){
+  var loveSeed = ASCIISuma(yourName.value) + ASCIISuma(theirName.value)
+  loveSeed= "" + loveSeed
+  console.log(loveSeed.toString())
+  console.log(loveSeed/Math.pow(10,loveSeed.toString().length)*100)
+  loveScore = loveSeed/(Math.pow(10,loveSeed.toString().length))*100
+  if ((yourName.value.toLowerCase().includes("echo") & theirName.value.toLowerCase().includes("liam") ) || (yourName.value.toLowerCase().includes("liam") & theirName.value.toLowerCase().includes("echo") )  ){
     loveScore = 101
   }
-  
+  if ((yourName.value.toLowerCase().includes("mary") & theirName.value.toLowerCase().includes("khiem") ) || (yourName.value.toLowerCase().includes("khiem") & theirName.value.toLowerCase().includes("mary") )  ){
+    loveScore = 110
+  }
+  console.log(loveScore)
   e.preventDefault();
   if (yourName.value == "" && theirName.value == "") {
     alert("You can't leave fields empty");
@@ -175,7 +176,7 @@ calcBtn.addEventListener("click", function (e) {
       "</b>" +
       " very soon. Best of Luck!";
   } else if (loveScore <= 105) {
-    loveScore = 100
+    loveScore = 101
     yourlovescoreis.innerHTML = "Your Love Score is";
     love();
     reloadBtn.style.display = "block";
@@ -188,6 +189,17 @@ calcBtn.addEventListener("click", function (e) {
       "<b>" +
       capitalize_Words(theirName.value) +
       "</b>" +
-      " very soon. Best of Luck!";
+      " is very funny and sexy. No luck needed you sexy lovers";
+  } else if (loveScore <= 115) {
+    loveScore = 101
+    yourlovescoreis.innerHTML = "Your Love Score is";
+    love();
+    reloadBtn.style.display = "block";
+    loveInfo.innerHTML =
+      "<b>You</b> and " +
+      "<b>" +
+      capitalize_Words(theirName.value) +
+      "</b>" +
+      " OMG get married already!";
   }
 });
